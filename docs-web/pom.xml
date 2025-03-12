@@ -134,6 +134,10 @@
       <artifactId>apacheds-all</artifactId>
       <scope>test</scope>
     </dependency>
+      <dependency>
+          <groupId>com.sismics.docs</groupId>
+          <artifactId>docs-core</artifactId>
+      </dependency>
 
   </dependencies>
 
