@@ -26,7 +26,7 @@ angular.module('docs').controller('Login', function(Restangular, $scope, $rootSc
       User.userInfo(true).then(function(data) {
         $rootScope.userInfo = data;
       });
-
+    
       if($stateParams.redirectState !== undefined && $stateParams.redirectParams !== undefined) {
         $state.go($stateParams.redirectState, JSON.parse($stateParams.redirectParams))
           .catch(function() {

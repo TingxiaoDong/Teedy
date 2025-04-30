@@ -134,10 +134,6 @@
       <artifactId>apacheds-all</artifactId>
       <scope>test</scope>
     </dependency>
-      <dependency>
-          <groupId>com.sismics.docs</groupId>
-          <artifactId>docs-core</artifactId>
-      </dependency>
 
   </dependencies>
 
@@ -203,13 +199,6 @@
               <reuseForks>false</reuseForks>
             </configuration>
           </plugin>
-
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-site-plugin</artifactId>
-            <version>3.12.1</version>
-          </plugin>
-
         </plugins>
       </build>
     </profile>
@@ -247,12 +236,18 @@
                 <phase>generate-sources</phase>
                 <configuration>
                   <target name="building">
-                    <exec executable="npm" dir="${project.basedir}/src/main/webapp"
-                          osfamily="unix" failonerror="true">
+                    <!-- npm install -->
+                    <exec executable="cmd" dir="${project.basedir}/src/main/webapp" osfamily="windows" failonerror="true">
+                      <arg line="/c npm install" />
+                    </exec>
+                    <exec executable="npm" dir="${project.basedir}/src/main/webapp" osfamily="unix" failonerror="true">
                       <arg line="install" />
                     </exec>
-                    <exec executable="grunt"
-                          dir="${project.basedir}/src/main/webapp" osfamily="unix" failonerror="true">
+                    <!-- grunt -->
+                    <exec executable="cmd" dir="${project.basedir}/src/main/webapp" osfamily="windows" failonerror="true">
+                      <arg line="/c grunt --apiurl=api" />
+                    </exec>
+                    <exec executable="grunt" dir="${project.basedir}/src/main/webapp" osfamily="unix" failonerror="true">
                       <arg line="--apiurl=api" />
                     </exec>
                   </target>
@@ -277,7 +272,6 @@
       </build>
     </profile>
   </profiles>
-
   <distributionManagement>
     <site>
       <id>local</id>
