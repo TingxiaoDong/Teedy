@@ -598,6 +598,37 @@
         <version>${com.levigo.jbig2.levigo-jbig2-imageio.version}</version>
       </dependency>
 
+      <!-- Jersey dependencies -->
+      <dependency>
+        <groupId>org.glassfish.jersey.containers</groupId>
+        <artifactId>jersey-container-servlet</artifactId>
+        <version>${org.glassfish.jersey.version}</version>
+      </dependency>
+      
+      <dependency>
+        <groupId>org.glassfish.jersey.media</groupId>
+        <artifactId>jersey-media-json-processing</artifactId>
+        <version>${org.glassfish.jersey.version}</version>
+      </dependency>
+      
+      <dependency>
+        <groupId>org.glassfish.jersey.media</groupId>
+        <artifactId>jersey-media-multipart</artifactId>
+        <version>${org.glassfish.jersey.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.glassfish.jersey.inject</groupId>
+        <artifactId>jersey-hk2</artifactId>
+        <version>${org.glassfish.jersey.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>jakarta.ws.rs</groupId>
+        <artifactId>jakarta.ws.rs-api</artifactId>
+        <version>3.1.0</version>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
   <reporting>
