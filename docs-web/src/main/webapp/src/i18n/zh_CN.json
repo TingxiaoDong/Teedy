@@ -1,0 +1,33 @@
+{
+  "register": {
+    "title": "注册新用户",
+    "username": "用户名",
+    "email": "电子邮箱",
+    "password": "密码",
+    "message": "注册说明",
+    "submit": "提交注册申请",
+    "email_exists": "该邮箱地址已被注册"
+  },
+  "registration": {
+    "title": "注册申请管理",
+    "pending_requests": "待处理申请",
+    "history": "处理历史",
+    "no_pending_requests": "暂无待处理的注册申请",
+    "no_processed_requests": "暂无已处理的注册申请",
+    "username": "用户名",
+    "email": "电子邮箱",
+    "request_message": "申请说明",
+    "create_time": "申请时间",
+    "status": "状态",
+    "admin_remark": "处理备注",
+    "actions": "操作",
+    "accept": "接受",
+    "reject": "拒绝",
+    "status_pending": "待处理",
+    "status_accepted": "已接受",
+    "status_rejected": "已拒绝",
+    "load_error": "加载注册申请失败",
+    "accept_error": "接受申请失败",
+    "reject_error": "拒绝申请失败"
+  }
+} 
