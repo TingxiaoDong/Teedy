@@ -531,5 +531,14 @@
     "status_pending": "待处理",
     "status_accepted": "已接受",
     "status_rejected": "已拒绝"
+  },
+  "register": {
+    "title": "注册新用户",
+    "username": "用户名",
+    "email": "电子邮箱",
+    "password": "密码",
+    "message": "注册说明",
+    "submit": "提交注册申请",
+    "email_exists": "该邮箱地址已被注册"
   }
 }
