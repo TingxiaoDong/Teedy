@@ -1,0 +1,13 @@
+<div class="modal-header">
+  <h3 class="modal-title">{{ 'registration.accept_title' | translate }}</h3>
+</div>
+<div class="modal-body">
+  <div class="form-group">
+    <label for="adminRemark">{{ 'registration.accept_message' | translate }}</label>
+    <textarea class="form-control" id="adminRemark" ng-model="adminRemark" rows="3"></textarea>
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="ok()">{{ 'ok' | translate }}</button>
+  <button class="btn btn-default" ng-click="cancel()">{{ 'cancel' | translate }}</button>
+</div> 

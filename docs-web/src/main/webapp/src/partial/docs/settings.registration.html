@@ -1,0 +1,94 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{{ 'registration.title' | translate }}</h2>
+            
+            <!-- 调试信息 -->
+            <div class="alert alert-info">
+                <p>待处理申请数量: {{pendingRequests.length}}</p>
+                <p>已处理申请数量: {{processedRequests.length}}</p>
+            </div>
+            
+            <!-- 待处理申请 -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{ 'registration.pending_requests' | translate }}</h3>
+                </div>
+                <div class="panel-body">
+                    <div ng-if="!pendingRequests || pendingRequests.length === 0" class="alert alert-info">
+                        {{ 'registration.no_pending_requests' | translate }}
+                    </div>
+                    <table class="table table-striped" ng-if="pendingRequests && pendingRequests.length > 0">
+                        <thead>
+                            <tr>
+                                <th>{{ 'registration.username' | translate }}</th>
+                                <th>{{ 'registration.email' | translate }}</th>
+                                <th>{{ 'registration.request_message' | translate }}</th>
+                                <th>{{ 'registration.create_time' | translate }}</th>
+                                <th>{{ 'registration.actions' | translate }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="request in pendingRequests">
+                                <td>{{ request.username }}</td>
+                                <td>{{ request.email }}</td>
+                                <td>{{ request.requestMessage }}</td>
+                                <td>{{ request.createTime | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+                                <td>
+                                    <button class="btn btn-success btn-sm" ng-click="acceptRequest(request)">
+                                        {{ 'registration.accept' | translate }}
+                                    </button>
+                                    <button class="btn btn-danger btn-sm" ng-click="rejectRequest(request)">
+                                        {{ 'registration.reject' | translate }}
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 处理历史 -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{ 'registration.history' | translate }}</h3>
+                </div>
+                <div class="panel-body">
+                    <div ng-if="!processedRequests || processedRequests.length === 0" class="alert alert-info">
+                        {{ 'registration.no_processed_requests' | translate }}
+                    </div>
+                    <table class="table table-striped" ng-if="processedRequests && processedRequests.length > 0">
+                        <thead>
+                            <tr>
+                                <th>{{ 'registration.username' | translate }}</th>
+                                <th>{{ 'registration.email' | translate }}</th>
+                                <th>{{ 'registration.request_message' | translate }}</th>
+                                <th>{{ 'registration.create_time' | translate }}</th>
+                                <th>{{ 'registration.status' | translate }}</th>
+                                <th>{{ 'registration.admin_remark' | translate }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="request in processedRequests">
+                                <td>{{ request.username }}</td>
+                                <td>{{ request.email }}</td>
+                                <td>{{ request.requestMessage }}</td>
+                                <td>{{ request.createTime | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+                                <td>
+                                    <span class="label" ng-class="{
+                                        'label-warning': request.status === 'PENDING',
+                                        'label-success': request.status === 'ACCEPTED',
+                                        'label-danger': request.status === 'REJECTED'
+                                    }">
+                                        {{ 'registration.status_' + request.status.toLowerCase() | translate }}
+                                    </span>
+                                </td>
+                                <td>{{ request.adminRemark }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
