@@ -75,4 +75,14 @@ angular.module('docs').controller('Login', function(Restangular, $scope, $rootSc
       });
     });
   };
+
+  // 打开注册对话框
+  $scope.openRegister = function() {
+    $uibModal.open({
+      templateUrl: 'partial/docs/register.html',
+      controller: 'ModalRegister',
+      backdrop: 'static',   // 禁止点击遮罩关闭
+      keyboard: false       // 禁止按ESC关闭
+    });
+  };
 });

@@ -23,6 +23,22 @@
   a {
     font-size: 90%;
     color: #666;
+    text-decoration: none;
+  }
+
+  /* 注册按钮样式 */
+  .register-btn {
+    display: block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+  }
+
+  .register-btn:hover {
+    background-color: #e8e8e8;
+    text-decoration: none;
   }
 </style>
 <div class="row vertical-center">
@@ -62,14 +78,22 @@
 
           <div class="row">
             <div class="col-md-6">
-              <button type="submit" class="btn btn-primary" ng-click="login()">
-                <span class="fas fa-check"></span> {{ 'login.submit' | translate }}
-              </button>
+              <div style="display: flex; gap: 10px;">
+                <button type="submit" class="btn btn-primary" ng-click="login()">
+                  <span class="fas fa-check"></span> {{ 'login.submit' | translate }}
+                </button>
+                <button type="button" class="btn btn-primary" ng-click="openRegister()">
+                  <span class="fas fa-user-plus"></span> 注册
+                </button>
+              </div>
+              <div style="text-align: right; margin-top: 8px;">
+                <a href ng-click="openPasswordLost()">{{ 'login.password_lost_btn' | translate }}</a>
+              </div>
             </div>
 
             <div class="col-md-6 text-right btn-password-lost">
               <div class="well-sm">
-                <a href ng-click="openPasswordLost()">{{ 'login.password_lost_btn' | translate }}</a>
+                <!-- 删除多余的密码丢失按钮 -->
               </div>
             </div>
           </div>
