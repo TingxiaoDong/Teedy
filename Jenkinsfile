@@ -18,19 +18,21 @@ pipeline {
                 '''
             }
         }
+
         stage('Set Image') {
             steps {
-                sh '''
+                sh """
                     echo "Setting image for deployment..."
-                    kubectl set image deployment/${DEPLOYMENT_NAME} ${CONTAINER_NAME}=${IMAGE_N
-                '''
+                    kubectl set image deployment/${DEPLOYMENT_NAME} ${CONTAINER_NAME}=${IMAGE_NAME}
+                """
             }
         }
+
         stage('Verify') {
             steps {
-                sh 'kubectl rollout status deployment/${DEPLOYMENT_NAME}'
-                sh 'kubectl get pods'
+                sh "kubectl rollout status deployment/${DEPLOYMENT_NAME}"
+                sh "kubectl get pods"
             }
         }
     }
- }
+}
