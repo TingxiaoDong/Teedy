@@ -1,18 +1,9 @@
- pipeline {
+pipeline {
     agent any
     environment {
-<<<<<<< HEAD
-        DEPLOYMENT_NAME = "your-deployment"
-        CONTAINER_NAME = "your-container"
-        IMAGE_NAME = "your-dockerhub-id/your-image:version"
-=======
-        // define environment variable
-        // Jenkins credentials configuration
-        DOCKER_HUB_CREDENTIALS = credentials('dockerhub_credentials') // Docker Hub credentials ID store in Jenkins
-        // Docker Hub Repository's name
-        DOCKER_IMAGE = 'TingxiaoDong/teedy' // your Docker Hub user name and Repository's name
-        DOCKER_TAG = "${env.BUILD_NUMBER}" // use build number as tag
->>>>>>> parent of bf9c2cd (update)
+        DEPLOYMENT_NAME = "hello-node"
+        CONTAINER_NAME = "docs"
+        IMAGE_NAME = "tingxiaodong/docs:latest"
     }
     stages {
         stage('Start Minikube') {
