@@ -22,7 +22,18 @@ angular.module('docs').factory('User', function(Restangular) {
      * Login an user.
      */
     login: function(user) {
-      return Restangular.one('user').post('login', user);
+      return Restangular.one('user').post('login', user, {}, {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        transformRequest: function(obj) {
+          var str = [];
+          for(var p in obj) {
+            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+          }
+          return str.join("&");
+        }
+      });
     },
     
     /**

@@ -248,6 +248,7 @@
     "menu_inbox": "收件箱扫描",
     "menu_server_logs": "服务器日志",
     "menu_registration": "注册申请管理",
+    "menu_user_activity": "用户活动",
     "user": {
       "title": "用户 <small>管理</small>",
       "add_user": "添加用户",
@@ -540,5 +541,20 @@
     "message": "注册说明",
     "submit": "提交注册申请",
     "email_exists": "该邮箱地址已被注册"
+  },
+  "user_activity": {
+      "title": "用户活动",
+      "username": "用户名",
+      "email": "电子邮箱",
+      "storage_used": "已使用存储空间",
+      "storage_quota": "存储空间配额",
+      "usage_percent": "使用率",
+      "document_count": "文档数量",
+      "file_count": "文件数量",
+      "create_date": "创建日期",
+      "status": "状态",
+      "active": "正常",
+      "disabled": "已禁用",
+      "totp_enabled": "双因素认证已启用"
   }
 }

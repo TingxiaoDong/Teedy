@@ -181,6 +181,15 @@ angular.module('docs',
         }
       }
     })
+    .state('settings.user_activity', {
+      url: '/user_activity',
+      views: {
+        'settings': {
+          templateUrl: 'partial/docs/admin.user.activity.html',
+          controller: 'AdminUserActivityController'
+        }
+      }
+    })
     .state('settings.workflow', {
       url: '/workflow',
       views: {

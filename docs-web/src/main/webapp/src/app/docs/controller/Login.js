@@ -22,7 +22,13 @@ angular.module('docs').controller('Login', function(Restangular, $scope, $rootSc
   
   // Login
   $scope.login = function() {
-    User.login($scope.user).then(function() {
+    var loginData = {
+      username: $scope.user.username,
+      password: $scope.user.password,
+      remember: true
+    };
+    
+    User.login(loginData).then(function() {
       User.userInfo(true).then(function(data) {
         $rootScope.userInfo = data;
       });

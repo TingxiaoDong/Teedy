@@ -1,0 +1,18 @@
+{
+  "settings.user.view_activity": "查看用户活动",
+  "admin.user_activity.title": "用户活动",
+  "admin.user_activity.storage_usage": "存储使用情况",
+  "admin.user_activity.username": "用户名",
+  "admin.user_activity.email": "邮箱",
+  "admin.user_activity.storage_used": "已用存储",
+  "admin.user_activity.storage_quota": "存储配额",
+  "admin.user_activity.usage_percent": "使用百分比",
+  "admin.user_activity.last_activity": "最后活动时间",
+  "admin.user_activity.document_count": "文档数量",
+  "admin.user_activity.file_count": "文件数量",
+  "admin.user_activity.create_date": "创建日期",
+  "admin.user_activity.status": "状态",
+  "admin.user_activity.active": "正常",
+  "admin.user_activity.disabled": "已禁用",
+  "admin.user_activity.totp_enabled": "两步验证已启用"
+} 
